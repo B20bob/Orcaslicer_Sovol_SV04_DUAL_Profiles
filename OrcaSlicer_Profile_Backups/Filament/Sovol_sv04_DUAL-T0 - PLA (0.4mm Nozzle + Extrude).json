@@ -1,0 +1,28 @@
+{
+    "default_filament_colour": [
+        "#00FFFF"
+    ],
+    "filament_end_gcode": [
+        ";END Gcode for filament T0 (Start)\nG92 E0\nG1 F600 E-1 ; Retract\n;G0 X-20 F12000 ; Park T0\n;raise nozzle\n;G1 Z(layer_z + 10)\n;drop temp to idle\nM104 S190\n;park and change tool\n;T1\nM106 S0 ;turn off part cooling fan\n;G92 E0 (DON'T USE! LAYER SHIFT!!)\n;{if has_wipe_tower and total_toolchanges > 0}T1\n;G0 X{wipe_tower_x[0]} Y{wipe_tower_y[0]} F{travel_speed*60}{endif}\n;END gcode for filament T0 (End)\n"
+    ],
+    "filament_flow_ratio": [
+        "0.91"
+    ],
+    "filament_settings_id": [
+        "Sovol_sv04_DUAL-T0 - PLA (0.4mm Nozzle + Extrude)"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode T0 (Start)\nT0\n;raise to operating temp\nM104 S200\nM109 S200 ;raise to temp and wait\nM106 S255 ;set part cooling fan to max\n\n;lower into position\n;G1 Z(layer_z)\n\n;G1 F600 E5.5\n; Filament gcode T0 (End)\n"
+    ],
+    "from": "User",
+    "inherits": "Creality Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Sovol_sv04_DUAL-T0 - PLA (0.4mm Nozzle + Extrude)",
+    "nozzle_temperature": [
+        "200"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "200"
+    ],
+    "version": "1.7.0.0"
+}

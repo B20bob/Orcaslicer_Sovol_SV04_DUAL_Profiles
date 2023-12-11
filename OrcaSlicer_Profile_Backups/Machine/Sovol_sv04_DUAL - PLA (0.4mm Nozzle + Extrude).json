@@ -1,0 +1,47 @@
+{
+    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0",
+    "cooling_tube_length": "0",
+    "cooling_tube_retraction": "0",
+    "enable_filament_ramming": "0",
+    "extra_loading_move": "0",
+    "from": "User",
+    "gcode_flavor": "marlin2",
+    "inherits": "Creality Ender-3 0.4 nozzle",
+    "is_custom_defined": "0",
+    "machine_end_gcode": "G91; relative positioning\nG1 E-2 F2700; retract a bit\nG1 E-2 Z0.2 F2400; retract and raise Z\nG1 X0 Y240 F3000; wipe out\nG1 Z10; raise Z more\nG90; absolute positioning\nT0\nG1 X-62\nT1\nG1 X362\nG1 Y300; present print\nM106 S0; turn off fan\nM104 S0; turn off hotend\nM140 S0; turn off bed\nM84 X Y E; disable all steppers but Z\nT0\nM104 S0; turn off hotend on tool 0 too",
+    "machine_start_gcode": "; Modified gcode for prusaslicer:\n\n;sv04_Dual start\n\nM605 S1 ;Set printer to auto park mode\nT0 ;Make sure to use left extruder\nM140 S[first_layer_bed_temperature] ;start preheating the bed\nG28 ;home all axes\nM190 S[first_layer_bed_temperature] ; heat to bed setting in Cura and WAIT\nG34; Run Z-Stepper auto align\nG29; BLTOUCH Mesh Generation\nG1 Z5 F5000 ; lift nozzle\nM104 S[first_layer_temperature] ;start preheating the hotend\nM104 T1 S{(first_layer_temperature[current_extruder])-50} ;Partially heat 2nd extruder\nM109 S[first_layer_temperature]; Heat hotend to setting in CURA and wait\n\nG92 E0; reset extruder 1\nG1 X2.0 Y20 Z0.28 F5000.0;\nG1 X2.0 Y200.0 Z0.28 F1500.0 E15;\nG1 X2.4 Y200.0 Z0.28 F5000.0;\nG1 X2.4 Y20 Z0.28 F1500.0 E15;\nG92 E0 ;Reset Extruder 1\nG1 Z2.0 F3000;\n\n; new code to purge right extruder too\nM104 S{(first_layer_temperature[current_extruder])-50}; partially cool down extruder 1\nT1; switch extruder\n; Fully heat it\nM104 S[first_layer_temperature]\nM109 S[first_layer_temperature]\n\n; purge line\n\nG92 E0;\nG1 X301.8 Y20 Z0.28 F5000.0;\nG1 X301.8 Y200.0 Z0.28 F1500.0 E15;\nG1 X302 Y200.0 Z0.28 F5000.0;\nG1 X302 Y20 Z0.28 F1500.0 E15;\nG92 E0; Reset extruder\nG1 Z2.0 F3000;\n\n; back to idle temp\nM104 S{(first_layer_temperature[current_extruder])-20}\n\n; park and swap back to T0\nT0",
+    "name": "Sovol_sv04_DUAL - PLA (0.4mm Nozzle + Extrude)",
+    "parking_pos_retraction": "0",
+    "print_host": "192.168.0.129",
+    "printable_area": [
+        "0x0",
+        "300x0",
+        "300x300",
+        "0x300"
+    ],
+    "printable_height": "380",
+    "printer_settings_id": "Sovol_sv04_DUAL - PLA (0.4mm Nozzle + Extrude)",
+    "printhost_apikey": "BF633016A03A4F26A430010E95AD410A",
+    "retract_before_wipe": [
+        "100%"
+    ],
+    "retract_when_changing_layer": [
+        "0"
+    ],
+    "retraction_length": [
+        "0.5"
+    ],
+    "retraction_minimum_travel": [
+        "1"
+    ],
+    "retraction_speed": [
+        "40"
+    ],
+    "version": "1.7.0.0",
+    "z_hop": [
+        "0.2"
+    ],
+    "z_hop_types": [
+        "Auto Lift"
+    ]
+}
