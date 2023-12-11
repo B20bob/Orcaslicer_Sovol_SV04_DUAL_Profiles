@@ -1,17 +1,18 @@
 This is tested and working on my SV04 running the stock build of Marlin FW that shipped with the mainboard. It should also work with klipper depending on how you have your macros set up.
 
+- You will need to make sure that Relative-E distances are enabled in order to use the purge tower, which I highly recomend using.
 
 
-Make sure to disable filament ramming under: Printer settings > Multimaterial.
+- Make sure to disable filament ramming under: Printer settings > Multimaterial.
 
 
-Copy and paste start and end gCodes into the respective sections in Orcaslicer:
+-Copy and paste start and end gCodes into the respective sections in Orcaslicer:
 
-Printer settings > machine start G-code.
+_ Printer settings > machine start G-code.
 
-Printer settings > machine end G-code.
+_ Printer settings > machine end G-code.
 
-Printer settings > before layer change G-code.
+_ Printer settings > before layer change G-code.
 
 
 -------------------------------------------------------------
