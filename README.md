@@ -1,3 +1,7 @@
+This is tested and working on my SV04 running the stock build of Marlin FW that shipped with the mainboard. It should also work with klipper depending on how you have your macros set up.
+
+
+
 Make sure to disable filament ramming under: Printer settings > Multimaterial.
 
 
