@@ -2,8 +2,11 @@ Make sure to disable filament ramming under: Printer settings > Multimaterial.
 
 
 Copy and paste start and end gCodes into the respective sections in Orcaslicer:
+
 Printer settings > machine start G-code.
+
 Printer settings > machine end G-code.
+
 Printer settings > before layer change G-code.
 
 
