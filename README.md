@@ -6,13 +6,13 @@ This is tested and working on my SV04 running the stock build of Marlin FW that 
 - Make sure to disable filament ramming under: Printer settings > Multimaterial.
 
 
--Copy and paste start and end gCodes into the respective sections in Orcaslicer:
+- Copy and paste start and end gCodes into the respective sections in Orcaslicer:
 
-_ Printer settings > machine start G-code.
+> Printer settings > machine start G-code.
 
-_ Printer settings > machine end G-code.
+> Printer settings > machine end G-code.
 
-_ Printer settings > before layer change G-code.
+> Printer settings > before layer change G-code.
 
 
 -------------------------------------------------------------
