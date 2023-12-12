@@ -1,5 +1,7 @@
 This is tested and working on my SV04 running the stock build of Marlin FW that shipped with the mainboard. It should also work with klipper depending on how you have your macros set up.
 
+Before importing you will need to manually add a printer model, Creality Ender 3 0.4 nozzle.
+
 > You will need to make sure that Relative-E distances are enabled in order to use the purge tower, which I highly recomend using.
 
 
